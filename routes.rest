@@ -1,0 +1,10 @@
+#GET request returns "hello big world"
+http://localhost:3000/
+
+
+#GET request that returns all contacts 
+http://localhost:3000/contacts
+
+
+#GET request that returns a single contact
+http://localhost:3000/contacts/662ae1e140313acb7032afe8
