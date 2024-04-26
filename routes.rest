@@ -1,25 +1,25 @@
-#This is when ran locally
+//This is when ran locally
 
 #GET request returns "hello big world"
-http://localhost:3000/
+GET http://localhost:3000/
 
 
 #GET request that returns all contacts 
-http://localhost:3000/contacts
+GET http://localhost:3000/contacts
 
 
 #GET request that returns a single contact
-http://localhost:3000/contacts/662ae1e140313acb7032afe8
+GET http://localhost:3000/contacts/662ae1e140313acb7032afe8
 
-#This is on a live site
+//This is on a live site
 
 #GET request returns "hello big world"
-https://cse321-w1-project.onrender.com/
+GET https://cse321-w1-project.onrender.com/
 
 
 #GET request that returns all contacts 
-https://cse321-w1-project.onrender.com/contacts
+GET https://cse321-w1-project.onrender.com/contacts
 
 
 #GET request that returns a single contact
-https://cse321-w1-project.onrender.com/contacts/662ae1e140313acb7032afe8
+GET https://cse321-w1-project.onrender.com/contacts/662ae1e140313acb7032afe8
