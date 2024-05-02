@@ -72,8 +72,8 @@ Content-Type: application/json
     "birthday": "01-01-01"
 }
 
-###PUT request to update a specifc contact based on id
-PUT https://cse321-w1-project.onrender.com/
+###PUT request to update a specifc contact based on id (note add the id of the test contact)
+PUT https://cse321-w1-project.onrender.com/contacts/
 Content-Type: application/json
 
 {
@@ -87,4 +87,4 @@ Content-Type: application/json
 
 
 ###DELETE request to delete a specific contact based on id (insert the id from the created and updated contact)
-DELETE https://cse321-w1-project.onrender.com/
+DELETE https://cse321-w1-project.onrender.com/contacts/
