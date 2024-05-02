@@ -1,25 +1,90 @@
-//This is when ran locally
+//This is when ran locally or is development
 
-#GET request returns "hello big world"
-GET http://localhost:5500/
-
-
-#GET request that returns all contacts 
-GET http://localhost:5500/contacts
+###GET request returns "hello big world"
+GET https://localhost:5500/ 
+Content-Type: application/json
 
 
-#GET request that returns a single contact
-GET http://localhost:5500/contacts/662ae1e140313acb7032afe8
+###GET request that returns all contacts 
+GET https://localhost:5500/contacts
+Content-Type: application/json
+
+### GET request that returns a single contact
+GET https://localhost:5500/contacts/662ae1e140313acb7032afe8
+Content-Type: application/json
+
+###POST request creates a contact
+POST https://localhost:5500/contacts 
+Content-Type: application/json
+
+{
+    "firstName": "testfirstname",
+    "lastName": "testlastname",
+    "email" : "testemail@email.com",
+    "favoriteColor": "testgreen",
+    "birthday": "01-01-01"
+}
+
+###PUT request to update a specifc contact based on id
+PUT http://localhost:5500/contacts/
+Content-Type: application/json
+
+{
+    "firstName": "updatedFirstName",
+    "lastName": "updatedLastname",
+    "email": "updated@email.com",
+    "favoriteColor" : "updatedgreen",
+    "birthday": "11-11-11"
+}
+
+
+
+
+###DELETE request to delete a specific contact based on id (insert the id from the created and updated contact)
+DELETE http://localhost:5500/contacts/
+
+
+
 
 //This is on a live site
 
-#GET request returns "hello big world"
+###GET request returns "hello big world"
 GET https://cse321-w1-project.onrender.com/
 
 
-#GET request that returns all contacts 
+###GET request that returns all contacts 
 GET https://cse321-w1-project.onrender.com/contacts
 
 
-#GET request that returns a single contact
+###GET request that returns a single contact
 GET https://cse321-w1-project.onrender.com/contacts/662ae1e140313acb7032afe8
+
+
+###POST request creates a contact
+POST https://cse321-w1-project.onrender.com/contacts/ 
+Content-Type: application/json
+
+{
+    "firstName": "testfirstname",
+    "lastName": "testlastname",
+    "email" : "testemail@email.com",
+    "favoriteColor": "testgreen",
+    "birthday": "01-01-01"
+}
+
+###PUT request to update a specifc contact based on id
+PUT https://cse321-w1-project.onrender.com/
+Content-Type: application/json
+
+{
+    "firstName": "updatedFirstName",
+    "lastName": "updatedLastname",
+    "email": "updated@email.com",
+    "favoriteColor" : "updatedgreen",
+    "birthday": "11-11-11"
+}
+
+
+
+###DELETE request to delete a specific contact based on id (insert the id from the created and updated contact)
+DELETE https://cse321-w1-project.onrender.com/
