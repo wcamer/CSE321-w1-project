@@ -5,10 +5,9 @@
     "description": "This is the API for all routes associated with contacts",
     "version": "1.0.0"
   },
-  "host": "localhost:5500",
+  "host": "cse321-w1-project.onrender.com/",
   "basePath": "/",
   "schemes": [
-    "http",
     "https"
   ],
   "paths": {
