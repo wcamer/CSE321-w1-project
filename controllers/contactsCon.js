@@ -3,7 +3,17 @@ const mongodbObjectId = require('mongodb').ObjectId
 
 
 const getAll = async (req,res) =>{
-    const collection = await mongoDb.getDb().db().collection('contacts').find()
+    const collection = await mongoDb.getDb().db().collection('contacts').find().toArray((error, lists) => {
+        if (error){
+            res.status(400).json({message: error})
+        }
+        return lists
+    })
+
+   console.log("here is collection", collection)
+    res.setHeader("Content-Type", "application/json")
+    res.json(collection)
+
     // console.log("here is collection....\n", await collection.toArray())
     // collection.toArray().then((contacts) => {
     //     res.setHeader('Content-Type', 'application/json');
@@ -11,24 +21,42 @@ const getAll = async (req,res) =>{
     // })
 
 
-    const contacts = await collection.toArray()
-    res.setHeader('Content-Type', 'application/json');
-    res.json(contacts)
+    // const contacts = await collection.toArray()
+    // res.setHeader('Content-Type', 'application/json');
+    // res.json(contacts)
     // console.log("here is collection....\n",contacts)
 }
 
 
 // const mongodbObjectId = require('mongodb').ObjectId
 const getOne = async (req,res) =>{
+    // const id = new mongodbObjectId(req.params.id)
+    // // console.log("here is req.params",req.params)
+    // // console.log("here is the req.parms.id",req.params.id)
+    // const collection = await mongoDb.getDb().db().collection('contacts').find({_id: id})
+    // const singleContact = await collection.toArray()
+
+    // const len = singleContact.length
+    // console.log("here is len",len)
+
+    // res.setHeader('Content-Type', 'application/json')
+    // res.json(singleContact[0])
+
+    //week 3 update
     const id = new mongodbObjectId(req.params.id)
     // console.log("here is req.params",req.params)
     // console.log("here is the req.parms.id",req.params.id)
-    const collection = await mongoDb.getDb().db().collection('contacts').find({_id: id})
-    const singleContact = await collection.toArray()
-
+    const collection = await mongoDb.getDb().db().collection('contacts').find({_id: id}).toArray((error, list) =>{
+        if(error){
+            res.status(400).json({message: error})
+        }
+        return list
+    })
+    
     res.setHeader('Content-Type', 'application/json')
-    res.json(singleContact[0])
-    // console.log("here is single contact....\n",singleContact)
+    res.json(collection)
+
+
 }
 
 
